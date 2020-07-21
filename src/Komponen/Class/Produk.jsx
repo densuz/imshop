@@ -41,4 +41,4 @@ class Produk extends Component {
     }
 
 }
-export default Produk
+export default Produk;

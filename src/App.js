@@ -12,6 +12,9 @@ import Contact from './Komponen/Fungsional/Contact';
 
 import DetailProduct from './Komponen/Fungsional/DetailProduct'
 import { CartContext } from './CartContex';
+import Login from './Komponen/Fungsional/Login';
+import Register from './Komponen/Fungsional/Register';
+import ProductComp from './Komponen/Fungsional/ProductComp';
 
 
 export const keranjangContext= createContext()
@@ -59,9 +62,12 @@ const App = () => {
         <keranjangContext.Provider value={{keranjangState: count,keranjangdispatch:dispatch}}>
         <Switch>
           <Route exact path="/" component={HomePage} />
-          <Route exact path="/Product" component={DetailProduct} />
+          <Route exact path="/Product" component={ProductComp} />
+          <Route exact path="/detailproduct" component={DetailProduct}/>
           <Route exact path="/about" component={AboutComp}/>
           <Route exact path="/Contact" component={Contact}/>
+          <Route exact path="/Login" component ={Login}/>
+          <Route exact path="/Register" component={Register}/>
           
 
           {/* <Route exact path="/detail/:id" component={DetailComp}/> */}

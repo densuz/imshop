@@ -117,3 +117,4 @@ export class Login extends PureComponent {
     }
 }
 
+export default Login;
