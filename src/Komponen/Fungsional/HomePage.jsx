@@ -1,5 +1,5 @@
 import React from 'react'
-import { Jumbotron, Button, Container, Row, Col } from 'reactstrap';
+import { Jumbotron, Button, Container } from 'reactstrap';
 //import CardComp from './CardComp';
 import { Link } from 'react-router-dom';
 //import { CartContext } from '../../CartContex';

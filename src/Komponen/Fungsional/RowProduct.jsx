@@ -53,7 +53,7 @@ function Rowproduct(props) {
                     <Button  color="danger">
                         <Link to={
                             {
-                                pathname: '/detailproduk',
+                                pathname: '/detailproduct',
                             }
                         }>Detail</Link>
                     </Button>
@@ -70,7 +70,7 @@ function Rowproduct(props) {
                     <Button  color="danger">
                         <Link to={
                             {
-                                pathname: '/detailproduk',
+                                pathname: '/detailproduct',
                             }
                         }>Detail</Link>
                     </Button>

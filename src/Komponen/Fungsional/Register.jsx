@@ -1,6 +1,6 @@
 import React, { PureComponent } from "react";
 import axios from 'axios';
-import { Container, Alert, Input, Button, FormGroup, Col, Label, Form, Row } from 'reactstrap';
+import { Container, Alert, Input, Button, FormGroup, Col, Label, Form } from 'reactstrap';
 import { Link } from 'react-router-dom';
 
 const api = 'http://localhost:1997'

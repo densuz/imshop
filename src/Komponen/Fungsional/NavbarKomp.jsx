@@ -45,9 +45,6 @@ const NavbarComp = (props) => {
                             <NavLink to="/contact"className="nav-link">Contact</NavLink>
                         </NavItem>
                         <NavItem>
-                            <NavLink to="/Hooks"className="nav-link">Hooks</NavLink>
-                        </NavItem>
-                        <NavItem>
                             <NavLink to="/blog"className="nav-link">Blog</NavLink>
                         </NavItem>
                     </Nav>
