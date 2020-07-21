@@ -15,6 +15,7 @@ import { CartContext } from './CartContex';
 import Login from './Komponen/Fungsional/Login';
 import Register from './Komponen/Fungsional/Register';
 import ProductComp from './Komponen/Fungsional/ProductComp';
+import Tagihan from './Komponen/Fungsional/Tagihan';
 
 
 export const keranjangContext= createContext()
@@ -68,6 +69,7 @@ const App = () => {
           <Route exact path="/Contact" component={Contact}/>
           <Route exact path="/Login" component ={Login}/>
           <Route exact path="/Register" component={Register}/>
+          <Route exact path="/tagihan" component={Tagihan}/>
           
 
           {/* <Route exact path="/detail/:id" component={DetailComp}/> */}

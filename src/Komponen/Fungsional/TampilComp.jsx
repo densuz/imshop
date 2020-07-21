@@ -1,62 +1,14 @@
-import React, {PureComponent } from 'react'
-import axios from 'axios'
-import qs from 'querystring'
-import {Table, Button, Container, NavLink, Alert} from 'reactstrap'
+import React from 'react';
 
-const api = 'http://localhost:3001'
+function TampilComp(props) {
+    return (
+        <div>
+        <p>Hallo, {props.username}</p>
+        <h1>{props.jumlah}</h1>
+        <button onClick={()=>props.fungsi(props.jumlah+1)} disabled={props.disabled}>Tambah </button>
+        </div>
+    )
+    
+}
 
-class ListComp extends PureComponent {
-    constructor(props) {
-        super (props)
-        this.state = {
-            t_produk: [],
-            response: '',
-            display: 'none'
-        }
-    }
-
-    componentDidMount(){
-        axios.get(api+'/tampil').then(res=>{
-            this.setState({
-                t_produk: res.data.values 
-            })
-        })
-    }
-
-    render () {
-        return (
-            <Container>
-                <h2>Data Produk</h2>
-                <hr/>
-                <Table className="table-bordered">
-                    <thead>
-                        <tr>
-                            <th>Kode Produk</th>
-                            <th>Nama Produk</th>
-                            <th>Jenis Produk</th>
-                            <th>Jumlah Produk</th>
-                            <th>Satuan</th>
-                            <th>Opsi</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {this.state.t_produk.map(t_produk =>
-                            <tr key={t_produk.id_produk}>
-                                <td>{t_produk.kd_produk}</td>
-                                <td>{t_produk.nama_produk}</td>
-                                <td>{t_produk.jenis_produk}</td>
-                                <td>{t_produk.jumlah}</td>
-                                <td>{t_produk.satuan}</td>
-                                <td>Edit | Delete</td>
-                            </tr>
-
-                            )}
-                    </tbody>
-
-                </Table>
-            </Container>
-        )
-    }
-} 
-
-export default ListComp;
+export default TampilComp;
