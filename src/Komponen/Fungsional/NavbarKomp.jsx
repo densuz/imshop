@@ -57,7 +57,7 @@ const NavbarComp = (props) => {
                         <span className="badge badge-light">{value}</span>
                         </Button>
                     </NavbarText>
-                    
+                    <span> | </span>
 
                     <NavbarText><a href="/Login" data-toggle="tooltip" title="Login Account"><i class="fa fa-lock" aria-hidden="true"></i>Login</a></NavbarText>
                 </Collapse>

@@ -8,6 +8,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import HomePage from './Komponen/Fungsional/HomePage';
 import NavbarKomp from './Komponen/Fungsional/NavbarKomp'
 import AboutComp from './Komponen/Fungsional/AboutComp';
+import Contact from './Komponen/Fungsional/Contact';
 
 import DetailProduct from './Komponen/Fungsional/DetailProduct'
 import { CartContext } from './CartContex';
@@ -60,6 +61,7 @@ const App = () => {
           <Route exact path="/" component={HomePage} />
           <Route exact path="/Product" component={DetailProduct} />
           <Route exact path="/about" component={AboutComp}/>
+          <Route exact path="/Contact" component={Contact}/>
           
 
           {/* <Route exact path="/detail/:id" component={DetailComp}/> */}
