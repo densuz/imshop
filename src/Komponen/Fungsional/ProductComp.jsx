@@ -4,9 +4,9 @@ import Rowproduct from './Rowproduct'
 
 function ProductComp(){
     return (
-        <div>
+        
             <Container>
-               
+               <br/>
                 <h3> Produk Terlaris</h3>
                 <hr/>
                 <Row>
@@ -25,7 +25,6 @@ function ProductComp(){
                    </Row>
                    
             </Container>
-        </div>
 
 
     )

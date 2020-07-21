@@ -6,8 +6,9 @@ import { Link } from 'react-router-dom';
 function HomePage() {
    
     return (
-        <div className="background:transparent !important">
+        
             <Container>
+                <br/>
                 <Jumbotron>
                     <h1 className="display-3">iWEB Shop </h1>
                     <p className="lead">Solusi Terbaik belanja Online dari rumah .</p>
@@ -19,7 +20,7 @@ function HomePage() {
                     </p>
                 </Jumbotron>
             </Container>
-        </div>
+        
     )
 }
 
