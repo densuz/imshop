@@ -5,7 +5,7 @@ import { Table, Button, Container, NavLink, Alert } from 'reactstrap'
 import { Link } from 'react-router-dom'
 import { type } from 'os'
 
-const api = 'http://localhost:3001'
+const api = 'http://localhost:1997'
 
 class ListComp extends PureComponent {
     constructor(props) {
@@ -20,7 +20,7 @@ class ListComp extends PureComponent {
     }
 
     componentDidMount() {
-        axios.get(api + '/tampil').then(res => {
+        axios.get(api + '/tampilsemuabarang').then(res => {
             this.setState({
                 barang: res.data.values
             })
@@ -33,7 +33,7 @@ class ListComp extends PureComponent {
             kode_barang: kode_barang
         })
 
-        axios.delete(api + '/hapus',
+        axios.delete(api + '/hapusbarang',
             {
                 data: data,
                 headers: { 'Content-type': 'application/x-www-form-urlencoded' }
@@ -45,7 +45,7 @@ class ListComp extends PureComponent {
                     t_barang: t_barang.filter(t_barang => t_barang.kode_barang !== kode_barang),
                     display: 'block'
                 })
-                this.props.history.push('/barang')
+                this.props.history.push('/list')
             } else {
                 this.setState({
                     response: json.data.values,
@@ -80,11 +80,11 @@ class ListComp extends PureComponent {
                     </thead>
                     <tbody>
                         {this.state.t_barang.map(t_barang =>
-                            <tr key={t_barang.kode_barang}>
+                            <tr key={t_barang.id_barang}>
+                                 <td>{t_barang.kode_barang}</td>
                                 <td>{t_barang.nama_barang}</td>
                                 <td>{t_barang.harga}</td>
                                 <td>{t_barang.jumlah_barang}</td>
-                                <td>{t_barang.gambar_barang}</td>
                                 <td>{t_barang.satuan}</td>
                                 <td>
                                     <Link to=
@@ -92,12 +92,12 @@ class ListComp extends PureComponent {
                                             {
                                                 pathname: '/barang/edit',
                                                 state: {
+                                                    id_barang: t_barang.id_barang,
                                                     kode_barang: t_barang.kode_barang,
                                                     nama_barang: t_barang.nama_barang,
                                                     harga: t_barang.harga,
                                                     jumlah_barang: t_barang.jumlah_barang,
-                                                    gambar_barang: t_barang.gambar_barang,
-                                                    satuan: t_barang.satuan,
+                                                    satuan: t_barang.satuan
                                                 }
                                             }
                                         }>
@@ -105,7 +105,7 @@ class ListComp extends PureComponent {
 
                                     </Link>
                                     <span> </span>
-                                        <Button onClick={() => this.Deletebarang(t_barang.kode_barang)} color="danger"> Delete </Button>
+                                        <Button onClick={() => this.Deletebarang(t_barang.id_barang)} color="danger"> Delete </Button>
                                 </td>
                             </tr>
                         )}
