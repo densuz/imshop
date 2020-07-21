@@ -9,16 +9,16 @@ class ListComp extends PureComponent {
     constructor(props) {
         super (props)
         this.state = {
-            t_produk: [],
+            t_barang: [],
             response: '',
             display: 'none'
         }
     }
 
     componentDidMount(){
-        axios.get(api+'/tampil').then(res=>{
+        axios.get(api+'/tampilsemuabarang').then(res=>{
             this.setState({
-                t_produk: res.data.values 
+                t_barang: res.data.values 
             })
         })
     }
@@ -26,27 +26,27 @@ class ListComp extends PureComponent {
     render () {
         return (
             <Container>
-                <h2>Data Produk</h2>
+                <h2>Data barang</h2>
                 <hr/>
                 <Table className="table-bordered">
                     <thead>
                         <tr>
-                            <th>Kode Produk</th>
-                            <th>Nama Produk</th>
-                            <th>Jenis Produk</th>
-                            <th>Jumlah Produk</th>
+                            <th>Kode Barang</th>
+                            <th>Nama Barang</th>
+                            <th>Jenis Barang</th>
+                            <th>Jumlah Barang</th>
                             <th>Satuan</th>
                             <th>Opsi</th>
                         </tr>
                     </thead>
                     <tbody>
-                        {this.state.t_produk.map(t_produk =>
-                            <tr key={t_produk.id_produk}>
-                                <td>{t_produk.kd_produk}</td>
-                                <td>{t_produk.nama_produk}</td>
-                                <td>{t_produk.jenis_produk}</td>
-                                <td>{t_produk.jumlah}</td>
-                                <td>{t_produk.satuan}</td>
+                        {this.state.t_barang.map(t_barang =>
+                            <tr key={t_barang.id_barang}>
+                                <td>{t_barang.kode_barang}</td>
+                                <td>{t_barang.nama_barang}</td>
+                                <td>{t_barang.harga}</td>
+                                <td>{t_barang.jumlah_barang}</td>
+                                <td>{t_barang.satuan}</td>
                                 <td>Edit | Delete</td>
                             </tr>
 
