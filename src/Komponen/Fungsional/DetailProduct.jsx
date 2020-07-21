@@ -64,8 +64,8 @@ export default  function  HookReducer(props)  {
                     <br/>
                     <p><b>Jumlah :{countContext.keranjangState.jumlah}</b></p>
                     <Row>
-                        <Col><Button onClick={() => countContext.keranjangdispatch({ type: 'kurangi' })} color="danger">-</Button></Col>
-                        <Col>{count.jumlah}</Col>
+                        <Col><Button onClick={() => countContext.keranjangispatch({ type: 'kurangi' })} color="danger">-</Button></Col>
+                        <Col>{countContext.keranjangState.jumlah}</Col>
                         <Col><Button onClick={() =>countContext.keranjangdispatch({ type: 'tambah' })} color="primary">+</Button></Col>
 
                     </Row>

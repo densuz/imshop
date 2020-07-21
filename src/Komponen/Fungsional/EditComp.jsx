@@ -5,19 +5,20 @@ import { Link } from 'react-router-dom';
 import { Container, Col, Form, Alert, FormGroup, Label, Input, Button } from 'reactstrap';
 
 
-const api = "http://localhost:3001"
+const api = "http://localhost:1997"
 
 class EditComp extends Component {
     constructor(props) {
         super(props)
 
         this.state = {
-            id_produk: this.props.location.state.id_produk,
-            kd_produk: this.props.location.state.kd_produk,
-            nama_produk: this.props.location.state.nama_produk,
-            jenis_produk: this.props.location.state.jenis_produk,
-            jumlah: this.props.location.state.jumlah,
-            harga: this.props.location.state.satuan,
+            id_barang: this.props.location.state.id_barang,
+            kode_barang: this.props.location.state.kode_barang,
+            nama_barang: this.props.location.state.nama_barang,
+            harga: this.props.location.state.harga,
+            jumlah_barang: this.props.location.state.jumlah_barang,
+            satuan: this.props.location.state.satuan,
+           
             response: '',
             display: 'none'
 
@@ -28,19 +29,18 @@ class EditComp extends Component {
         this.setState({ [e.target.name]: e.target.value });
     }
 
-    ubahproduk = (id_produk) => {
+    ubahbarang = (id_barang) => {
         const data = qs.stringify({
-            id_produk: id_produk,
-            kd_produk: this.state.kd_produk,
-            nama_produk: this.state.nama_produk,
-            jenis_produk: this.state.jenis_produk,
-            jumlah: this.state.jumlah,
+            id_barang: id_barang,
+            kode_barang: this.state.kode_barang,
+            nama_barang: this.state.nama_barang,
             harga: this.state.harga,
+            jumlah_barang: this.state.jumlah_barang,
             satuan: this.state.satuan,
 
 
         });
-        axios.put(api + '/ubah', data)
+        axios.put(api + '/ubahbarang', data)
             .then(json => {
                 if (json === 200) {
                     this.setState({
@@ -60,53 +60,53 @@ class EditComp extends Component {
     render() {
         return (
             <Container>
-                <h4>Update Data Produk</h4>
+                <h4>Update Data barang</h4>
                 <Alert color="success" style={{ display: this.state.display }}>
                     {this.state.response}
                 </Alert>
                 <Form className="form">
                     <Col>
-                        <Label for="kd_produk">Kode Produk</Label>
+                        <Label for="kode_barang">Kode barang</Label>
                         <FormGroup row>
                             <Col>
-                                <Input type="text" name="kd_produk" onChange={this.handleChange} value={this.state.kd_produk} placeholder="Masukan Kode Produk" />
+                                <Input type="text" name="kode_barang" onChange={this.handleChange} value={this.state.kode_barang} placeholder="Masukan Kode barang" />
                             </Col>
                         </FormGroup>
-                        <Label for="nama_produk">Nama</Label>
+                        <Label for="nama_barang">Nama</Label>
                         <FormGroup row>
                             <Col>
-                                <Input type="text" name="nama_produk" onChange={this.handleChange} value={this.state.nama_produk} placeholder="Masukan Nama Produk" />
+                                <Input type="text" name="nama_barang" onChange={this.handleChange} value={this.state.nama_barang} placeholder="Masukan Nama barang" />
                             </Col>
                         </FormGroup>
-                        <Label for="jenis_produk">Jenis Produk</Label>
+                        <Label for="harga">Jenis barang</Label>
                         <FormGroup row>
                             <Col>
-                                <Input type="text" name="jenis_produk" onChange={this.handleChange} value={this.state.jenis_produk} placeholder="Masukan Jenis Produk" />
+                                <Input type="text" name="harga" onChange={this.handleChange} value={this.state.harga} placeholder="Masukan Harga" />
                             </Col>
                         </FormGroup>
-                        <Label for="jumlah">Jumlah</Label>
+                        <Label for="jumlah_barang">Jumlah</Label>
                         <FormGroup row>
                             <Col>
-                                <Input type="text" name="jumlah" onChange={this.handleChange} value={this.state.jumlah} placeholder="Masukan jumlah Produk" />
+                                <Input type="text" name="jumlah_barang" onChange={this.handleChange} value={this.state.jumlah_barang} placeholder="Masukan jumlah barang" />
                             </Col>
                         </FormGroup>
-                        <Label for="satuan">Satuan Produk</Label>
+                        <Label for="satuan">Satuan barang</Label>
                         <FormGroup row>
                             <Col>
-                                <Input type="text" name="satuan" onChange={this.handleChange} value={this.state.satuan} placeholder="Masukan satuan Produk" />
+                                <Input type="text" name="satuan" onChange={this.handleChange} value={this.state.satuan} placeholder="Masukan satuan barang" />
                             </Col>
                         </FormGroup>
                     </Col>
                     <Col>
                         <FormGroup row>
                             <Col>
-                                <button type="button" onClick={()=>this.ubahproduk(this.state.id_produk)} className="btn btn-success">Update</button>
+                                <button type="button" onClick={()=>this.ubahbarang(this.state.id_barang)} className="btn btn-success">Update</button>
                             </Col>
                             <Col>
                                 <Button color="danger">Reset</Button>{' '}
                             </Col>
                             <Col>
-                                <Link to='/Product'><Button color="secondary">Kembali</Button></Link>
+                                <Link to='/'><Button color="secondary">Kembali</Button></Link>
                             </Col>
                         </FormGroup>
                     </Col>

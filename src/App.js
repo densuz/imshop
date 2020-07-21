@@ -17,6 +17,8 @@ import Register from './Komponen/Fungsional/Register';
 import ProductComp from './Komponen/Fungsional/ProductComp';
 import Tagihan from './Komponen/Fungsional/Tagihan';
 import ListComp from './Komponen/Fungsional/ListComp';
+import TambahComp from './Komponen/Fungsional/TambahComp';
+import EditComp from './Komponen/Fungsional/EditComp';
 
 
 export const keranjangContext= createContext()
@@ -72,6 +74,8 @@ const App = () => {
           <Route exact path="/Register" component={Register}/>
           <Route exact path="/tagihan" component={Tagihan}/>
           <Route exact path="/list" component ={ListComp}/>
+          <Route exact path="/barang/tambah" component={TambahComp}/>
+          <Route exact path="barang/edit" component={EditComp}/>
           
 
           {/* <Route exact path="/detail/:id" component={DetailComp}/> */}
