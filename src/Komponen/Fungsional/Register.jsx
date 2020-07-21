@@ -10,7 +10,7 @@ export class Register extends PureComponent {
         super(props);
 
         this.state = {
-            nama: '',
+            nama_user: '',
             username: '',
             email: '',
             password: '',
@@ -115,7 +115,7 @@ export class Register extends PureComponent {
                                         <Col>
                                             <Input type="text" name="alamat" id="validationDefaultalamat" onChange={this.handleChange} value={this.state.alamat} placeholder="Masukan Alamat Sesuai KTP" required />
                                         </Col>
-
+                                
                                     </FormGroup>
 
                                 </Col>
@@ -136,7 +136,7 @@ export class Register extends PureComponent {
                                             <Button color="danger">Reset</Button>{' '}
                                         </Col>
                                         <Col>
-                                            <Link to='/mahasiswa'><Button color="secondary">Kembali</Button></Link>
+                                            <Link to='/'><Button color="secondary">Kembali</Button></Link>
                                         </Col>
                                     </FormGroup>
                                 </Col>
