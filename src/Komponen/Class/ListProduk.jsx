@@ -20,17 +20,17 @@ class ListComp extends PureComponent {
     }
 
     componentDidMount() {
-        axios.get(api + '/tampilsemuabarang').then(res => {
+        axios.get(api + '/tampilbarang').then(res => {
             this.setState({
-                barang: res.data.values
+                t_barang: res.data.values
             })
         })
     }
 
-    Deletebarang = (kode_barang) => {
+    hapusbarang = (id_barang) => {
         const { t_barang } = this.state
         const data = qs.stringify({
-            kode_barang: kode_barang
+            id_barang: id_barang
         })
 
         axios.delete(api + '/hapusbarang',
@@ -42,10 +42,10 @@ class ListComp extends PureComponent {
             if (json.data.status === 200) {
                 this.setState({
                     response: json.data.values,
-                    t_barang: t_barang.filter(t_barang => t_barang.kode_barang !== kode_barang),
+                    t_barang: t_barang.filter(t_barang => t_barang.id_barang !== id_barang),
                     display: 'block'
                 })
-                this.props.history.push('/list')
+                this.props.history.push('/listbarang')
             } else {
                 this.setState({
                     response: json.data.values,
@@ -59,33 +59,31 @@ class ListComp extends PureComponent {
     render() {
         return (
             <Container>
-                <h2> Data Barang</h2>
+                <h2 > Data Barang</h2>
                 <Alert color="success" style={{ display: this.state.display }}>
                     {this.state.response}
                 </Alert>
-                <NavLink href="/barang/tambah"><Button color="success">Tambah Data</Button></NavLink>
+                <NavLink href="/barang/tambah"><Button color="success" className="fa fa-plus-circle">Tambah Data</Button></NavLink>
                 <hr />
                 <Table className="table-bordered">
-                    <thead>
+                <thead class="thead-dark">
                         <tr>
                             <th>Kode Barang</th>
                             <th>Nama Barang</th>
                             <th>Harga(Rp. )</th>
                             <th>Jumlah</th>
-                            <th>Gambar</th>
                             <th>Satuan</th>
-
                             <th>Opsi</th>
                         </tr>
                     </thead>
                     <tbody>
                         {this.state.t_barang.map(t_barang =>
-                            <tr key={t_barang.id_barang}>
-                                 <td>{t_barang.kode_barang}</td>
+                            <tr key={t_barang.kode_barang}>
                                 <td>{t_barang.nama_barang}</td>
                                 <td>{t_barang.harga}</td>
                                 <td>{t_barang.jumlah_barang}</td>
                                 <td>{t_barang.satuan}</td>
+                                <td>Opsi</td>
                                 <td>
                                     <Link to=
                                         {
@@ -105,7 +103,9 @@ class ListComp extends PureComponent {
 
                                     </Link>
                                     <span> </span>
-                                        <Button onClick={() => this.Deletebarang(t_barang.id_barang)} color="danger"> Delete </Button>
+                                        <Button onClick={() => this.hapusbarang(t_barang.id_barang)} color="danger"> Hapus 
+                                        <Link to ='/listbarang' >
+                                            </Link></Button>
                                 </td>
                             </tr>
                         )}

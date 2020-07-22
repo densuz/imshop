@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './CSS/Produk.css';
+import { Container } from 'reactstrap';
 
 class Produk extends Component {
     constructor(props) {
@@ -25,16 +26,18 @@ class Produk extends Component {
             })
         }
     }
+    
     render() {
         return (
             <div className="box-stock">
+                <Container>
                 <h2>{this.props.nama}</h2>
                 <img src="https://techbiz.id/wp-content/uploads/2020/06/Realme-Narzo-3-1200x794.jpg" alt="" />
                 <p> <b>Rp. {this.props.Harga}</b> </p>
                 <p>{this.state.stock}</p>
                 <button className="btn-click" onClick={this.ButtonBeli} disabled={this.state.disabled}>Beli</button>
                 <p>{this.state.status}</p>
-                
+                </Container>
             </div >
             
         )

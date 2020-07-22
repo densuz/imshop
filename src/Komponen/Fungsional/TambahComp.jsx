@@ -23,7 +23,7 @@ class TambahComp extends PureComponent {
             display: 'none'
         }
     }
-
+    
     tambahbarang = () => {
         axios.post(api + '/tambahbarang', {
             kode_barang: this.state.kode_barang,
@@ -57,8 +57,12 @@ class TambahComp extends PureComponent {
     render() {
         return (
             <Container>
+            <br/>
+                <Col>
+                    <Link to='/listbarang'><Button color="secondary" className="fa fa-arrow-left"></Button></Link>
+                </Col>
                 <br />
-                <b><h4 class='text-center'>Tambah Data Barang</h4></b>
+                <b><h4 class='text-center' >Tambah Data Barang</h4></b>
                 <Alert color="success" style={{ display: this.state.display }}>
                     {this.state.response}
                 </Alert>
@@ -80,7 +84,7 @@ class TambahComp extends PureComponent {
                             <b><Label for="harga">Harga</Label></b>
                             <FormGroup row>
                                 <Col>
-                                    <Input type="text" name="harga" id="validationDefaultharga" onChange={this.handleChange} value={this.state.harga} placeholder="Masukan Harga" required />
+                                    <Input type="text" name="harga" id="validationDefaultharga" onChange={this.handleChange} value={this.state.harga} placeholder="Rp. " required />
                                 </Col>
                             </FormGroup>
                             <b><Label for="jumlah_barang">Jumlah Barang</Label></b>
@@ -100,15 +104,13 @@ class TambahComp extends PureComponent {
                             <FormGroup row>
                                 <span>
                                     <Col>
-                                        <button type="button" onClick={this.tambahbarang} className="btn btn-success">Submit</button>
+                                        <button type="button" onClick={this.tambahbarang} className="btn btn-success fa fa-paper-plane">Submit</button>
                                     </Col>
                                 </span>
-                                <Col>
-                                    <Button color="danger">Reset</Button>{' '}
+                                <Col className="col-sm">
+                                    <Button className="fa fa-trash" color="danger">Reset</Button>{' '}
                                 </Col>
-                                <Col>
-                                    <Link to='/'><Button color="secondary">Kembali</Button></Link>
-                                </Col>
+
                             </FormGroup>
                         </Col>
 

@@ -19,14 +19,16 @@ import Tagihan from './Komponen/Fungsional/Tagihan';
 import TambahComp from './Komponen/Fungsional/TambahComp';
 import EditComp from './Komponen/Fungsional/EditComp';
 //import ListProduk from './Komponen/Class/ListProduk'
-import ListComp from './Komponen/Class/ListProduk';
+import ListProduk from './Komponen/Class/ListProduk';
+//import LoginComp from './Komponen/Fungsional/LoginComp';
+//import Produk from './Komponen/Class/Produk';
 
 
 export const keranjangContext= createContext()
 
 //untuk deklarasi fungsi jumlah dan tambah
 const initialState = {
-  jumlah: 1,
+  jumlah: 0,
   hargasatuan: 1000,
   hargatotal: 0,
   stock: 35
@@ -74,7 +76,7 @@ const App = () => {
           <Route exact path="/Login" component ={Login}/>
           <Route exact path="/Register" component={Register}/>
           <Route exact path="/tagihan" component={Tagihan}/>
-          <Route exact path="/listbarang" component ={ListComp}/>
+          <Route exact path="/listbarang" component ={ListProduk}/>
           <Route exact path="/barang/tambah" component={TambahComp}/>
           <Route exact path="barang/edit" component={EditComp}/>
           

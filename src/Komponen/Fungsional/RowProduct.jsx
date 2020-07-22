@@ -1,7 +1,7 @@
-import React, { Component, useReducer } from 'react';
+import React, { useReducer } from 'react';
 import {
-    Col, Card, CardImg, CardText, CardBody,
-    CardTitle, CardSubtitle, Button
+    Col, CardImg, CardText, CardBody,
+    CardTitle, CardSubtitle, Button, Container
 } from 'reactstrap';
 import { useContext } from 'react';
 import { CartContext } from '../../CartContex';
@@ -15,8 +15,6 @@ const initialState = {
 }
 
 const reducer = (state, action) => {
-
-
 
     switch (action.type) {
         case 'tambah': return {
@@ -36,50 +34,32 @@ const reducer = (state, action) => {
 }
 
 function Rowproduct(props) {
-    
+
     const [count] = useReducer(reducer, initialState)
-    const { value, setValue } = useContext(CartContext)
 
 
 
     return (
-        <Col>
-            <Card>
-                <CardImg top width="100%" src="https://placeimg.com/640/480/any" alt="Card image cap" />
-                <CardBody>
-                    <CardTitle>{props.item}</CardTitle>
-                    <CardSubtitle>Rp. {count.hargasatuan}</CardSubtitle>
-                    <CardText>Some quick example text to build on the card title and make up the bulk of the card's content.</CardText>
-                    <Button  color="danger">
-                        <Link to={
-                            {
-                                pathname: '/detailproduct',
-                            }
-                        }>Detail</Link>
-                    </Button>
-                    <span> | </span>
-                    <Button onClick={() => setValue(value + 1)} color="success">Tambahkan Keranjang</Button>
-                </CardBody>
-            </Card>
-            <hr/>
-            <CardImg top width="100%" src="https://placeimg.com/640/480/any" alt="Card image cap" />
-                <CardBody>
-                    <CardTitle>{props.item}</CardTitle>
-                    <CardSubtitle>Rp. {count.hargasatuan}</CardSubtitle>
-                    <CardText>Some quick example text to build on the card title and make up the bulk of the card's content.</CardText>
-                    <Button  color="danger">
-                        <Link to={
-                            {
-                                pathname: '/detailproduct',
-                            }
-                        }>Detail</Link>
-                    </Button>
-                    <span> | </span>
-                    <Button onClick={() => setValue(value + 1)} color="success">Tambahkan Keranjang</Button>
-                </CardBody>
-        </Col>
-        
+        <Container>
+            <Col>
 
+                <hr />
+                <CardImg top width="100%" src="https://placeimg.com/640/480/arch" alt="Card image cap" />
+                <CardBody>
+                    <CardTitle>{props.item}</CardTitle>
+                    <CardSubtitle>Rp. {count.hargasatuan}</CardSubtitle>
+                    <CardText>Some quick example text to build on the card title and make up the bulk of the card's content.</CardText>
+                    <Button color="danger">
+                        <Link to={
+                            {
+                                pathname: '/detailproduct',
+                            }
+                        }>Detail</Link>
+                    </Button>
+                </CardBody>
+            </Col>
+
+        </Container>
     );
 }
 
