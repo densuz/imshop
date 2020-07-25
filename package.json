@@ -14,9 +14,13 @@
     "querystring": "^0.2.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-items-carousel": "^2.8.0",
+    "react-responsive-carousel": "^3.2.9",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.1",
     "reactstrap": "^8.5.1",
+    "shards-ui": "^3.0.0",
+    "validator": "^13.1.1",
     "websocket-extensions": "^0.1.4"
   },
   "scripts": {

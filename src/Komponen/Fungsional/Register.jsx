@@ -124,7 +124,7 @@ export class Register extends PureComponent {
                                     <FormGroup row>
                                         <span>
                                             <Col>
-                                                <button type="button" onClick={this.Adduser} className="btn btn-success">Submit</button>
+                                                <Button type="button" onClick={this.Adduser} className="btn btn-success">Submit</Button>
                                                 <br />
                                                 <Alert color="success" style={{ display: this.state.display }}>
                                                     {this.state.response}

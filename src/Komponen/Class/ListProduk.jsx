@@ -3,7 +3,6 @@ import axios from 'axios'
 import qs from 'querystring'
 import { Table, Button, Container, NavLink, Alert } from 'reactstrap'
 import { Link } from 'react-router-dom'
-import { type } from 'os'
 
 const api = 'http://localhost:1997'
 
@@ -95,7 +94,7 @@ class ListComp extends PureComponent {
                                                     nama_barang: t_barang.nama_barang,
                                                     harga: t_barang.harga,
                                                     jumlah_barang: t_barang.jumlah_barang,
-                                                    satuan: t_barang.satuan
+                                                    satuan: t_barang.satuan,
                                                 }
                                             }
                                         }>

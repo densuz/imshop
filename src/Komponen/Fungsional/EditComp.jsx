@@ -18,7 +18,6 @@ class EditComp extends Component {
             harga: this.props.location.state.harga,
             jumlah_barang: this.props.location.state.jumlah_barang,
             satuan: this.props.location.state.satuan,
-           
             response: '',
             display: 'none'
 
@@ -36,9 +35,7 @@ class EditComp extends Component {
             nama_barang: this.state.nama_barang,
             harga: this.state.harga,
             jumlah_barang: this.state.jumlah_barang,
-            satuan: this.state.satuan,
-
-
+            satuan: this.state.satuan
         });
         axios.put(api + '/ubahbarang', data)
             .then(json => {
@@ -78,22 +75,22 @@ class EditComp extends Component {
                                 <Input type="text" name="nama_barang" onChange={this.handleChange} value={this.state.nama_barang} placeholder="Masukan Nama barang" />
                             </Col>
                         </FormGroup>
-                        <Label for="harga">Jenis barang</Label>
+                        <Label for="harga">Harga</Label>
                         <FormGroup row>
                             <Col>
-                                <Input type="text" name="harga" onChange={this.handleChange} value={this.state.harga} placeholder="Masukan Harga" />
+                                <Input type="text" name="harga" onChange={this.handleChange} value={this.state.harga} placeholder="Rp. " />
                             </Col>
                         </FormGroup>
                         <Label for="jumlah_barang">Jumlah</Label>
                         <FormGroup row>
                             <Col>
-                                <Input type="text" name="jumlah_barang" onChange={this.handleChange} value={this.state.jumlah_barang} placeholder="Masukan jumlah barang" />
+                                <Input type="text" name="jumlah_barang" onChange={this.handleChange} value={this.state.jumlah_barang} placeholder="jumlah barang" />
                             </Col>
                         </FormGroup>
-                        <Label for="satuan">Satuan barang</Label>
+                        <Label for="satuan">Satuan</Label>
                         <FormGroup row>
                             <Col>
-                                <Input type="text" name="satuan" onChange={this.handleChange} value={this.state.satuan} placeholder="Masukan satuan barang" />
+                                <Input type="text" name="satuan" onChange={this.handleChange} value={this.state.satuan} placeholder="pcs,unit,dll" />
                             </Col>
                         </FormGroup>
                     </Col>

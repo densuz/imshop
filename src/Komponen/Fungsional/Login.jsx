@@ -1,12 +1,13 @@
 import React, { PureComponent } from "react";
+
 import axios from 'axios';
 import { Container } from 'reactstrap';
 import '../Fungsional/CSS/style.css';
-import { Button, Input, Label, Alert, Form, FormGroup, Col  } from 'reactstrap';
+import { Button, Input, Label, Alert, Form, FormGroup, Col } from 'reactstrap';
 import { Link } from 'react-router-dom';
 
 //import Register from "./Register";
-//import Dashboard from "./Dashboard"
+
 
 const api = 'http://localhost:1997'
 
@@ -21,11 +22,9 @@ export class Login extends PureComponent {
             password: '',
             response: '',
             display: 'none',
-            
+
         }
     }
-
-
 
     loginuser = () => {
         axios.post(api + '/auth/api/v1/login', {
@@ -35,16 +34,16 @@ export class Login extends PureComponent {
             .then(json => {
                 if (json.data.status === 200) {
                     console.log(json.data.status);
-                    // alert("Login Berhasil !");
+                    alert("Login Berhasil !");
                     this.setState({
                         response: json.data.values,
                         display: 'block'
                     })
                 }
                 else {
-                    // alert('FAILED! Username atau Password anda Salah');
+                    //alert('FAILED! Username atau Password anda Salah');
                     debugger;
-                    this.props.history.push('/Dashboard')
+                    this.props.history.push('/dashboard')
                 }
             })
     }
@@ -71,6 +70,7 @@ export class Login extends PureComponent {
                         <div className="col-md-5">
 
                             <h2 class="text-center">Login Sistem</h2>
+                            
                             <br />
                             <Alert color="success" style={{ display: this.state.display }}>
                                 {this.state.response}
@@ -100,19 +100,16 @@ export class Login extends PureComponent {
                                     {this.state.response}
                                 </Alert>
                             </Form>
-                            <br/>
-                            <Label>Belum Memiliki akun?
+                            <Col className="col-sm">
+                                <Label>Belum Memiliki akun?
                                  <Link to="/Register">  Register</Link>
-                                    </Label>
-                            <br />
-                            <div>
-                                <br/>
-                            </div>
+                                </Label>
+                            </Col>
                         </div>
                     </div>
                 </div>
             </Container>
-            
+
         );
     }
 }

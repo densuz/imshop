@@ -10,9 +10,10 @@ import {
     Container,
     Button
 } from 'reactstrap';
-import { NavLink ,Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import { CartContext } from '../../CartContex';
 import { keranjangContext } from '../../App';
+
 
 
 const NavbarComp = (props) => {
@@ -31,35 +32,31 @@ const NavbarComp = (props) => {
                     <NavbarBrand to="/" className="nav-link">imWebShop</NavbarBrand>
                     <NavbarToggler onClick={toggle} />
                     <Collapse isOpen={isOpen} navbar>
-                        <Nav className="mr-auto" navbar>
+                        <Nav className="mr-auto color: #e3f2fd;" >
                             <NavItem>
                                 <NavLink to="/" className="nav-link">Home</NavLink>
                             </NavItem>
                             <NavItem>
-                                <NavLink to="/Product" className="nav-link" >Produk</NavLink>
+                                <NavLink to="/product" className="nav-link" >Produk</NavLink>
                             </NavItem>
                             <NavItem>
-                                <NavLink to="/About" className="nav-link">About</NavLink>
+                                <NavLink to="/about" className="nav-link">About</NavLink>
                             </NavItem>
                             <NavItem>
-                                <NavLink to="/contact" className="nav-link">Contact</NavLink>
-                            </NavItem>
-                            <NavItem>
-                                <NavLink to="/blog" className="nav-link">Blog</NavLink>
-                            </NavItem>
-                            <NavItem>
-                                <NavLink to="/listbarang" className="nav-link">List</NavLink>
+                                <NavLink to="/contact" className="nav-link fa fa-help">Contact</NavLink>
                             </NavItem>
                         </Nav>
                         <NavbarText>
-                            <Button  color="primary btn-md">
+                            <Button color="primary btn-md">
                                 <NavLink to="/tagihan" className="fa fa-shopping-cart " ></NavLink>
                                 <span className="badge badge-light">{value}</span>
                             </Button>
                         </NavbarText>
                         <span> | </span>
-
-                        <NavbarText><a href="/Login" data-toggle="tooltip" title="Login Account"><i class="fa fa-lock" aria-hidden="true"></i>Login</a></NavbarText>
+                        <NavbarText><a href="/Login" data-toggle="tooltip" title="Login Account">
+                            <i class="fa fa-lock" aria-hidden="true">
+                            </i>Login</a>
+                        </NavbarText>
                     </Collapse>
                 </Navbar>
             </Container>

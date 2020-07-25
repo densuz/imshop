@@ -9,6 +9,7 @@ function Tagihan() {
     const countContext = useContext(keranjangContext)
     return(
     <Container>
+      <br/>
       <h2> Keranjang Belanja</h2>
         <Jumbotron fluid>
         <Container fluid>

@@ -42,7 +42,6 @@ function Rowproduct(props) {
     return (
         <Container>
             <Col>
-
                 <hr />
                 <CardImg top width="100%" src="https://placeimg.com/640/480/arch" alt="Card image cap" />
                 <CardBody>
