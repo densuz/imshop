@@ -32,7 +32,7 @@ html, body {
     padding: 150px 0;
     background: url(https://unsplash.it/1500/500?image=1059) center center;
     background-size: cover;
-    text-align: center;
+    text-align: left;
     color: #fff;
     position: relative;
   }

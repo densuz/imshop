@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './CSS/Produk.css';
-import { Container, Col,Button } from 'reactstrap';
 
 class Produk extends Component {
     constructor(props) {
@@ -15,7 +14,7 @@ class Produk extends Component {
         }
     }
 
-    buttonBeli = () => {
+    ButtonBeli = () => {
         this.setState ({
             stock: this.state.stock  -1
         })
@@ -26,24 +25,20 @@ class Produk extends Component {
             })
         }
     }
-    
     render() {
         return (
-            
             <div className="box-stock">
-                <Container>
-                <h3>{this.props.nama}</h3>
-                <br/>
-                <img  src="https://ae01.alicdn.com/kf/H04ae19b4ea1b47068cff2cfebf4c999al.jpg" className="rounded float-center" alt="Card image cap" />
+                <h2>{this.props.nama}</h2>
+                <img src="https://d2pa5gi5n2e1an.cloudfront.net/global/images/product/mobilephones/Realme_Narzo/Realme_Narzo_L_1.jpg" alt="" />
                 <p> <b>Rp. {this.props.Harga}</b> </p>
                 <p>{this.state.stock}</p>
-                <Button className="btn-click" onClick={this.buttonBeli} disabled={this.state.disabled}>Beli</Button>
+                <button className="btn-click" onClick={this.ButtonBeli} disabled={this.state.disabled}>Beli</button>
                 <p>{this.state.status}</p>
-                </Container>
                 
-            </div>
+            </div >
+            
         )
     }
 
 }
-export default Produk;
+export default Produk

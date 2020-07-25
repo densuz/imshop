@@ -1,11 +1,11 @@
-import React, { useReducer } from 'react';
+import React, { useReducer,useContext, } from 'react';
 import {
     Col, CardImg, CardText, CardBody,
     CardTitle, CardSubtitle, Button, Container
 } from 'reactstrap';
-import { useContext } from 'react';
 import { CartContext } from '../../CartContex';
 import { Link } from 'react-router-dom'
+import Produk from '../Class/Produk'
 
 
 const initialState = {
@@ -43,11 +43,11 @@ function Rowproduct(props) {
         <Container>
             <Col>
                 <hr />
-                <CardImg top width="100%" src="https://placeimg.com/640/480/arch" alt="Card image cap" />
+                <CardImg top width="100%" src="https://i0.wp.com/gizmologi.id/wp-content/uploads/2019/10/Realme-xt-spesifikasi-500x500.jpeg" alt="Card image cap" />
                 <CardBody>
                     <CardTitle>{props.item}</CardTitle>
                     <CardSubtitle>Rp. {count.hargasatuan}</CardSubtitle>
-                    <CardText>Some quick example text to build on the card title and make up the bulk of the card's content.</CardText>
+                    <CardText>Smartphone Android gaming dan High Camera</CardText>
                     <Button color="danger">
                         <Link to={
                             {
@@ -56,6 +56,13 @@ function Rowproduct(props) {
                         }>Detail</Link>
                     </Button>
                 </CardBody>
+                <Container>
+                        <Col>
+                            <Produk nama="Realme Narzo" Harga="2.900.0000" stock="2" />
+                           
+                            
+                        </Col>
+                    </Container>
             </Col>
 
         </Container>

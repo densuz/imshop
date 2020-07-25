@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import { Row, Col, Container } from "reactstrap";
+import { Container } from "reactstrap";
 
 
 class Dashboard extends Component {
@@ -22,12 +22,12 @@ class Dashboard extends Component {
       <div class="d-flex" id="wrapper">
 
 
-<div class="bg-light border-right" id="sidebar-wrapper">
-  <div class="sidebar-heading"> </div>
-  <div class="list-group list-group-flush">
-    <a href="#" class="list-group-item list-group-item-action bg-light">Dashboard</a>
-    <a href="/listbarang" class="list-group-item list-group-item-action bg-light">Master</a>
-    <a href="/login" class="list-group-item list-group-item-action bg-light">Logout</a>
+<div className="bg-light border-right" id="sidebar-wrapper">
+  <div className="sidebar-heading"> </div>
+  <div className="list-group list-group-flush">
+    <a href="#" className="list-group-item list-group-item-action bg-light">Dashboard</a>
+    <a href="/listbarang" className="list-group-item list-group-item-action bg-light">Master</a>
+    <a href="/login" className="list-group-item list-group-item-action bg-light">Logout</a>
   </div>
 </div>
 </div>

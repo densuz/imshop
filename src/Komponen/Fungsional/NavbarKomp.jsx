@@ -48,7 +48,7 @@ const NavbarComp = (props) => {
                         </Nav>
                         <NavbarText>
                             <Button color="primary btn-md">
-                                <NavLink to="/tagihan" className="fa fa-shopping-cart " ></NavLink>
+                                <NavLink to="/tagihan" className="fa fa-shopping-cart " > {props.item}</NavLink>
                                 <span className="badge badge-light">{value}</span>
                             </Button>
                         </NavbarText>
