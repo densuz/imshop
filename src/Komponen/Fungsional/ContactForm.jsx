@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import '../Fungsional/CSS/contact.css';
-import { Container } from 'reactstrap';
+import { Container,Alert } from 'reactstrap';
 
 class ContactForm extends React.Component {
 
@@ -20,12 +20,20 @@ class ContactForm extends React.Component {
       method: "POST",
       url: "http://localhost:1997/send",
       data: this.state
-    }).then((response) => {
-      if (response.data.status === 'success') {
-        alert("Pesan Terkirim!");
-        this.resetForm()
-      } else if (response.data.status === 'fail') {
-        alert("Pesan Gagal dikirim!")
+    })
+    .then(json => {
+      if (json.data.status === 200) {
+          console.log(json.data.status);
+          // alert("pesan terkirim");
+          this.setState({
+              response: json.data.values,
+              display: 'block'
+          })
+      }
+      else {
+          // alert('pesan gagal terkirim');
+          debugger;
+          this.props.history.push('/')
       }
     })
   }
@@ -54,6 +62,7 @@ class ContactForm extends React.Component {
             </div>
             <button type="submit" className="btn btn-primary">Kirim</button>
           </form>
+         
         </div>
       </Container>
     );

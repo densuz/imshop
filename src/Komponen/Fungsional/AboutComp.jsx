@@ -9,7 +9,7 @@ function AboutComp() {
         <Container>
             <br/>
             <div class="card text-left">
-            <div class="card-header">PEMROGRAMAN WEBSITE</div>
+            <div class="card-header bg-info" >PEMROGRAMAN WEBSITE</div>
         <div class="card-body">
           <h5 class="card-title">Nama: DENI SUSANTO</h5>
           <p class="card-text"></p>

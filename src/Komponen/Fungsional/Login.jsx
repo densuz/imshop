@@ -68,10 +68,9 @@ export class Login extends PureComponent {
                 <div class="container login-form">
                     <div className="row justify-content-center">
                         <div className="col-md-5">
-
+                            <br/>
                             <h2 class="text-center">Login Sistem</h2>
                             
-                            <br />
                             <Alert color="success" style={{ display: this.state.display }}>
                                 {this.state.response}
                             </Alert>
@@ -95,7 +94,7 @@ export class Login extends PureComponent {
                                     <Input type="checkbox" className="form-check-Input" id="Check1" />
                                     <Label className="form-check-Label" for="Check1">Check me out</Label>
                                 </div>
-                                <Button type="Button" onClick={this.loginuser} className="btn btn-success">Submit</Button>
+                                <Button type="Button" onClick={this.loginuser} className="btn btn-success float-right">Submit</Button>
                                 <Alert color="success" style={{ display: this.state.display }}>
                                     {this.state.response}
                                 </Alert>

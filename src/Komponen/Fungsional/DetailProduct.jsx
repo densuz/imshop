@@ -75,7 +75,7 @@ export default function HookReducer(props) {
                 </Col>
                 <Col xs="6">
                     <h3>Realme XT{props.item}</h3>
-                    <p>stok </p>
+                    
                     <h3>Rp.{countContext.keranjangState.hargatotal}</h3>
                     <br />
                     

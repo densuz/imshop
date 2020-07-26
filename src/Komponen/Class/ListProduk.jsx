@@ -77,12 +77,13 @@ class ListComp extends PureComponent {
                     </thead>
                     <tbody>
                         {this.state.t_barang.map(t_barang =>
-                            <tr key={t_barang.kode_barang}>
+                            <tr key={t_barang.id_barang}>
+                                <td>{t_barang.kode_barang}</td>
                                 <td>{t_barang.nama_barang}</td>
                                 <td>{t_barang.harga}</td>
                                 <td>{t_barang.jumlah_barang}</td>
                                 <td>{t_barang.satuan}</td>
-                                <td>Opsi</td>
+                                
                                 <td>
                                     <Link to=
                                         {
