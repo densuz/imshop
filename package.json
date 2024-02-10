@@ -20,7 +20,7 @@
     "react-scripts": "3.4.1",
     "reactstrap": "^8.5.1",
     "shards-ui": "^3.0.0",
-    "validator": "^13.1.1",
+    "validator": "^13.7.0",
     "websocket-extensions": "^0.1.4"
   },
   "scripts": {
